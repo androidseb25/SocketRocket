@@ -10,19 +10,18 @@ let package = Package(
     .tvOS(.v15),
     .watchOS(.v8),
   ],
-  products: [
-    .library(
-      name: "SocketRocket",
-      targets: ["SocketRocket"]
-    )
-  ],
-  dependencies: [],
-  targets: [
-    .target(
-      name: "SocketRocket",
-      resources: [
-        .process("Resources/")
-      ]
-    )
-  ]
+products: [
+        .library(
+            name: "SocketRocket",
+            targets: ["SocketRocket"]),
+    ],
+    dependencies: [],
+    targets: [
+        .target(
+            name: "SocketRocket",
+            path: "SocketRocket",
+            cSettings: [
+                .headerSearchPath("Internal/**"),
+            ]),
+    ]
 )
